@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Adela Sobotkova" />
+<meta name="author" content="Laura Bundgaard Jørgensen" />
 
-<meta name="date" content="2025-01-10" />
+<meta name="date" content="2025-03-05" />
 
-<title>Danish Kings</title>
+<title>Danish Kings Homework for week 10</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,13 +350,188 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Danish Kings</h1>
-<h4 class="author">Adela Sobotkova</h4>
-<h4 class="date">2025-01-10</h4>
+<h1 class="title toc-ignore">Danish Kings Homework for week 10</h1>
+<h4 class="author">Laura Bundgaard Jørgensen</h4>
+<h4 class="date">2025-03-05</h4>
 
 </div>
 
 
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.4     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre><code>##                              Name                                    House
+## 1                  Gorm den Gamle                                     Gorm
+## 2               Harald 1. Blåtand                                     Gorm
+## 3                    Toke_Gormsen                                     Gorm
+## 4                Svend 1. Tveskæg                                     Gorm
+## 5                       Harald 2.                                     Gorm
+## 6               Knud 1. den Store                                     Gorm
+## 7                       Hardeknud                                     Gorm
+## 8                Magnus den Gode                                  Fairhair
+## 9              Svend 2. Estridsen                                Estridsen
+## 10                 Harald 3. Hen                                 Estridsen
+## 11           Knud 2. den Hellige                                 Estridsen
+## 12                Oluf 1. Hunger                                 Estridsen
+## 13                Erik 1. Ejegod                                 Estridsen
+## 14                          Niels                                Estridsen
+## 15                  Erik 2. Emune                                Estridsen
+## 16                    Erik 3. Lam                                Estridsen
+## 17 Svend 3.; Knud 3.; Valdemar 1.                                Estridsen
+## 18         Valdemar 1. den Store                                 Estridsen
+## 19                        Knud 4.                                Estridsen
+## 20              Valdemar 2. Sejr                                 Estridsen
+## 21           Erik 4. Plovpenning                                 Estridsen
+## 22                          Abel                                 Estridsen
+## 23                Christoffer 1.                                 Estridsen
+## 24              Erik 5. Klipping                                 Estridsen
+## 25                 Erik 6. Menved                                Estridsen
+## 26                 Christoffer 2.                                Estridsen
+## 27                    Valdemar 3.                                Estridsen
+## 28                Christoffer 2.                                 Estridsen
+## 29          Valdemar 4. Atterdag                                 Estridsen
+## 30                        Oluf 2.                                   Bjelbo
+## 31                    Margrete 1.                                Estridsen
+## 32             Erik 7. af Pommern                                Pomerania
+## 33       Christoffer 3. af Bayern                      Palatinate-Neumarkt
+## 34                    Chrstian 1.                                Oldenburg
+## 35                          Hans                                 Oldenburg
+## 36                  Christian 2.                                 Oldenburg
+## 37                   Frederik 1.                                 Oldenburg
+## 38                  Christian 3.                                 Oldenburg
+## 39                    Frederik 2.                                Oldenburg
+## 40                  Christian 4.                                 Oldenburg
+## 41                   Frederik 3.                                 Oldenburg
+## 42                  Christian 5.                                 Oldenburg
+## 43                   Frederik 4.                                 Oldenburg
+## 44                  Christian 6.                                 Oldenburg
+## 45                   Frederik 5.                                 Oldenburg
+## 46                  Christian 7.                                 Oldenburg
+## 47                   Frederik 6.                                 Oldenburg
+## 48                   Christian 8.                                Oldenburg
+## 49                   Frederik 7.                                 Oldenburg
+## 50                   Christian 9. Schleswig-Holstein-Sonderburg-Glücksborg
+## 51                   Frederik 8.  Schleswig-Holstein-Sonderburg-Glücksborg
+## 52                  Christian 10. Schleswig-Holstein-Sonderburg-Glücksborg
+## 53                   Frederik 9.  Schleswig-Holstein-Sonderburg-Glücksborg
+## 54                    Margrete 2. Schleswig-Holstein-Sonderburg-Glücksborg
+##    Start_year End_year Birth_year Death_year Gender          Dynasty
+## 1         936      958        908        958      M Jellingdynastiet
+## 2        NULL     NULL        936        985     M  Jellingdynastiet
+## 3         985      986       NULL        986     M  Jellingdynastiet
+## 4        NULL     NULL       NULL       1014     M  Jellingdynastiet
+## 5        1014     1018        963       NULL     M  Jellingdynastiet
+## 6        1018     1035       NULL       1035     M  Jellingdynastiet
+## 7        1035     1042        995       1042     M  Jellingdynastiet
+## 8        1042     1047       1018       1047     M  Jellingdynastiet
+## 9        1047     1074       1024       1076     M                  
+## 10       1074     1080       1019       1080     M  Jellingdynastiet
+## 11       1080     1086       1041       1086     M  Jellingdynastiet
+## 12       1086     1095       1043       1095     M  Jellingdynastiet
+## 13       1095     1103       1050       1103     M  Jellingdynastiet
+## 14       1104     1134       1055       1134     M  Jellingdynastiet
+## 15       1134     1137       1065       1137     M  Jellingdynastiet
+## 16       1137     1146       1100       1146     M  Jellingdynastiet
+## 17       1146     1157       1120                M  Jellingdynastiet
+## 18       1157     1182       1131       1182     M  Jellingdynastiet
+## 19       1182     1202       1163       1202     M  Jellingdynastiet
+## 20       1202     1241       1170       1241     M  Jellingdynastiet
+## 21       1241     1250       1216       1250     M  Jellingdynastiet
+## 22       1250     1252       1218       1252     M  Jellingdynastiet
+## 23       1252     1259       1219       1259     M  Jellingdynastiet
+## 24       1259     1286       1249       1286     M  Jellingdynastiet
+## 25       1286     1319       1274       1319     M  Jellingdynastiet
+## 26       1319     1326       1276       1332     M  Jellingdynastiet
+## 27       1326     1329       1314       1364     M  Jellingdynastiet
+## 28       1329     1332       1276       1332     M  Jellingdynastiet
+## 29       1340     1375       1320       1375     M  Jellingdynastiet
+## 30       1375     1387       1370       1387     M  Jellingdynastiet
+## 31       1387     1396       1353       1412     F  Jellingdynastiet
+## 32       1396     1439       1382       1459     M  Jellingdynastiet
+## 33       1440     1448       1416       1448     M  Jellingdynastiet
+## 34       1448     1481       1426       1481     M         Oldenborg
+## 35       1482     1513       1455       1513     M         Oldenborg
+## 36       1513     1523       1481       1559     M         Oldenborg
+## 37       1523     1533       1471       1533     M         Oldenborg
+## 38       1536     1559       1503       1559     M         Oldenborg
+## 39       1559     1588       1534       1588     M         Oldenborg
+## 40       1588     1648       1577       1648     M         Oldenborg
+## 41       1648     1670       1609       1670     M         Oldenborg
+## 42       1670     1699       1646       1699     M         Oldenborg
+## 43       1699     1730       1671       1733     M         Oldenborg
+## 44       1730     1746       1699       1746     M         Oldenborg
+## 45       1746     1766       1723       1766     M         Oldenborg
+## 46       1766     1808       1749       1808     M         Oldenborg
+## 47       1808     1839       1768       1839     M         Oldenborg
+## 48       1839     1848       1786       1848     M         Oldenborg
+## 49       1848     1863       1808       1863     M         Oldenborg
+## 50       1863     1906       1818       1906     M        Glücksborg
+## 51       1906     1912       1843       1912     M        Glücksborg
+## 52       1912     1947       1870       1947     M        Glücksborg
+## 53       1947     1972       1899       1972     M        Glücksborg
+## 54       1972     2023       1940       NULL     F        Glücksborg
+##                                                 Source   BirthDMY   DeathDMY
+## 1         https://da.wikipedia.org/wiki/Gorm_den_Gamle        908        958
+## 2    https://da.wikipedia.org/wiki/Harald_Bl%C3%A5tand        936        987
+## 3           https://da.wikipedia.org/wiki/Toke_Gormsen                      
+## 4     https://da.wikipedia.org/wiki/Svend_Tvesk%C3%A6g  17/04/963 03/02/1014
+## 5              https://da.wikipedia.org/wiki/Harald_2.        994       1018
+## 6         https://da.wikipedia.org/wiki/Knud_den_Store        995 12/11/1035
+## 7              https://da.wikipedia.org/wiki/Hardeknud       1018 08/06/1042
+## 8        https://da.wikipedia.org/wiki/Magnus_den_Gode       1024 25/10/1047
+## 9        https://da.wikipedia.org/wiki/Svend_Estridsen       1019 28/04/1076
+## 10            https://da.wikipedia.org/wiki/Harald_Hen       1041 17/04/1080
+## 11      https://da.wikipedia.org/wiki/Knud_den_Hellige       1043 10/07/1086
+## 12           https://da.wikipedia.org/wiki/Oluf_Hunger       1050 18/08/1095
+## 13           https://da.wikipedia.org/wiki/Erik_Ejegod       1055 10/07/1103
+## 14      https://da.wikipedia.org/wiki/Niels_af_Danmark       1134 25/06/1134
+## 15            https://da.wikipedia.org/wiki/Erik_Emune       1100 18/09/1137
+## 16              https://da.wikipedia.org/wiki/Erik_Lam       1120 27/08/1146
+## 17                                                                          
+## 18    https://da.wikipedia.org/wiki/Valdemar_den_Store 14/01/1131 12/05/1182
+## 19               https://da.wikipedia.org/wiki/Knud_6.       1163 12/11/1202
+## 20         https://da.wikipedia.org/wiki/Valdemar_Sejr    05/1170 28/03/1241
+## 21      https://da.wikipedia.org/wiki/Erik_Plovpenning       1216 10/08/1250
+## 22       https://da.wikipedia.org/wiki/Abel_af_Danmark       1218 29/06/1252
+## 23        https://da.wikipedia.org/wiki/Christoffer_1.       1219 29/05/1259
+## 24         https://da.wikipedia.org/wiki/Erik_Klipping       1249 22/10/1286
+## 25           https://da.wikipedia.org/wiki/Erik_Menved       1274 13/10/1319
+## 26        https://da.wikipedia.org/wiki/Christoffer_2. 29/09/1276 02/08/1332
+## 27           https://da.wikipedia.org/wiki/Valdemar_3.       1314       1364
+## 28        https://da.wikipedia.org/wiki/Christoffer_2. 29/09/1276 02/08/1332
+## 29     https://da.wikipedia.org/wiki/Valdemar_Atterdag       1320 24/10/1375
+## 30               https://da.wikipedia.org/wiki/Oluf_2.    12/1370 03/08/1387
+## 31           https://da.wikipedia.org/wiki/Margrete_1. 28/10/1412 28/10/1412
+## 32       https://da.wikipedia.org/wiki/Erik_af_Pommern       1382 24/09/1459
+## 33 https://da.wikipedia.org/wiki/Christoffer_af_Bayern 26/02/1416 06/01/1448
+## 34          https://da.wikipedia.org/wiki/Christian_1.    02/1426 21/05/1481
+## 35       https://da.wikipedia.org/wiki/Hans_af_Danmark 02/02/1455 20/02/1513
+## 36          https://da.wikipedia.org/wiki/Christian_2. 01/07/1481 25/01/1559
+## 37           https://da.wikipedia.org/wiki/Frederik_1. 07/10/1471 10/04/1533
+## 38          https://da.wikipedia.org/wiki/Christian_3. 12/08/1503 01/01/1559
+## 39           https://da.wikipedia.org/wiki/Frederik_2. 01/07/1534 04/04/1588
+## 40          https://da.wikipedia.org/wiki/Christian_4. 12/04/1577 28/02/1648
+## 41           https://da.wikipedia.org/wiki/Frederik_3. 18/03/1609 09/02/1670
+## 42          https://da.wikipedia.org/wiki/Christian_5. 15/04/1646 25/08/1699
+## 43           https://da.wikipedia.org/wiki/Frederik_4. 11/10/1671 12/10/1730
+## 44          https://da.wikipedia.org/wiki/Christian_6. 30/11/1699 06/08/1746
+## 45           https://da.wikipedia.org/wiki/Frederik_5. 31/03/1723 14/01/1766
+## 46          https://da.wikipedia.org/wiki/Christian_7. 29/01/1749 13/03/1808
+## 47           https://da.wikipedia.org/wiki/Frederik_6. 28/01/1768 03/12/1839
+## 48          https://da.wikipedia.org/wiki/Christian_8. 18/09/1768 20/01/1848
+## 49           https://da.wikipedia.org/wiki/Frederik_7. 06/10/1808 15/11/1863
+## 50          https://da.wikipedia.org/wiki/Christian_9. 08/04/1818  29/1/1906
+## 51           https://da.wikipedia.org/wiki/Frederik_8. 03/06/1843  14/5/1912
+## 52         https://da.wikipedia.org/wiki/Christian_10. 26/09/1870  20/4/1947
+## 53           https://da.wikipedia.org/wiki/Frederik_9. 11/03/1899  14/1/1972
+## 54          https://da.wikipedia.org/wiki/Margrethe_2.  16/1/1940  14/1/2024</code></pre>
 <p>The task here is to load your Danish Monarchs csv into R using the
 <code>tidyverse</code> toolkit, calculate and explore the kings’
 duration of reign with pipes <code>%&gt;%</code> in <code>dplyr</code>
@@ -371,7 +546,7 @@ provided <code>kings.csv</code> dataset.</p>
 are separated by? (hint: open it in plain text editor to see)</li>
 </ol>
 <p>List what is the</p>
-<p>separator:_______</p>
+<p>separator: comma</p>
 <ol start="2" style="list-style-type: decimal">
 <li>Create a <code>kings</code> object in R with the different functions
 below and inspect the different outputs.</li>
@@ -383,31 +558,212 @@ below and inspect the different outputs.</li>
 <li><code>read_csv2()</code></li>
 </ul>
 <pre class="r"><code># FILL IN THE CODE BELOW and review the outputs
-kings1 &lt;- read.csv(&quot;data/_______&quot;)
-
-kings2 &lt;- read_csv(&quot;data/_______&quot;)
-
-kings3 &lt;- read.csv2(&quot;data/_______&quot;)
-
-kings4 &lt;- read_csv2( &quot;data/_______&quot;)</code></pre>
+kings1 &lt;- read.csv(&quot;data/kings.csv&quot;)
+glimpse(kings1)</code></pre>
+<pre><code>## Rows: 54
+## Columns: 11
+## $ Name       &lt;chr&gt; &quot;Gorm den Gamle&quot;, &quot;Harald 1. Blåtand&quot;, &quot;Toke_Gormsen&quot;, &quot;Sve…
+## $ House      &lt;chr&gt; &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Fa…
+## $ Start_year &lt;chr&gt; &quot;936&quot;, &quot;NULL&quot;, &quot;985&quot;, &quot;NULL&quot;, &quot;1014&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042…
+## $ End_year   &lt;chr&gt; &quot;958&quot;, &quot;NULL&quot;, &quot;986&quot;, &quot;NULL&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047…
+## $ Birth_year &lt;chr&gt; &quot;908&quot;, &quot;936&quot;, &quot;NULL&quot;, &quot;NULL&quot;, &quot;963&quot;, &quot;NULL&quot;, &quot;995&quot;, &quot;1018&quot;,…
+## $ Death_year &lt;chr&gt; &quot;958&quot;, &quot;985&quot;, &quot;986&quot;, &quot;1014&quot;, &quot;NULL&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047&quot;…
+## $ Gender     &lt;chr&gt; &quot;M&quot;, &quot;M &quot;, &quot;M &quot;, &quot;M &quot;, &quot;M &quot;, &quot;M &quot;, &quot;M &quot;, &quot;M &quot;, &quot;M &quot;, &quot;M &quot;, …
+## $ Dynasty    &lt;chr&gt; &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;,…
+## $ Source     &lt;chr&gt; &quot;https://da.wikipedia.org/wiki/Gorm_den_Gamle&quot;, &quot;https://da…
+## $ BirthDMY   &lt;chr&gt; &quot;908&quot;, &quot;936&quot;, &quot;&quot;, &quot;17/04/963&quot;, &quot;994&quot;, &quot;995&quot;, &quot;1018&quot;, &quot;1024&quot;…
+## $ DeathDMY   &lt;chr&gt; &quot;958&quot;, &quot;987&quot;, &quot;&quot;, &quot;03/02/1014&quot;, &quot;1018&quot;, &quot;12/11/1035&quot;, &quot;08/0…</code></pre>
+<pre class="r"><code>head(kings1)</code></pre>
+<pre><code>##                Name House Start_year End_year Birth_year Death_year Gender
+## 1    Gorm den Gamle  Gorm        936      958        908        958      M
+## 2 Harald 1. Blåtand  Gorm       NULL     NULL        936        985     M 
+## 3      Toke_Gormsen  Gorm        985      986       NULL        986     M 
+## 4  Svend 1. Tveskæg  Gorm       NULL     NULL       NULL       1014     M 
+## 5         Harald 2.  Gorm       1014     1018        963       NULL     M 
+## 6 Knud 1. den Store  Gorm       1018     1035       NULL       1035     M 
+##            Dynasty                                            Source  BirthDMY
+## 1 Jellingdynastiet      https://da.wikipedia.org/wiki/Gorm_den_Gamle       908
+## 2 Jellingdynastiet https://da.wikipedia.org/wiki/Harald_Bl%C3%A5tand       936
+## 3 Jellingdynastiet        https://da.wikipedia.org/wiki/Toke_Gormsen          
+## 4 Jellingdynastiet  https://da.wikipedia.org/wiki/Svend_Tvesk%C3%A6g 17/04/963
+## 5 Jellingdynastiet           https://da.wikipedia.org/wiki/Harald_2.       994
+## 6 Jellingdynastiet      https://da.wikipedia.org/wiki/Knud_den_Store       995
+##     DeathDMY
+## 1        958
+## 2        987
+## 3           
+## 4 03/02/1014
+## 5       1018
+## 6 12/11/1035</code></pre>
+<pre class="r"><code>kings_min_1 &lt;- read_csv2(&quot;data/danskekongerkomma.csv&quot;)</code></pre>
+<pre><code>## ℹ Using &quot;&#39;,&#39;&quot; as decimal and &quot;&#39;.&#39;&quot; as grouping mark. Use `read_delim()` for more control.</code></pre>
+<pre><code>## New names:
+## Rows: 57 Columns: 10
+## ── Column specification
+## ──────────────────────────────────────────────────────── Delimiter: &quot;;&quot; chr
+## (8): navn, Født, Kilde_født, Død, Kilde_død, Kilde_StartReg., SlutReg., ... dbl
+## (1): StartReg. lgl (1): ...8
+## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+## Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## • `` -&gt; `...8`</code></pre>
+<pre class="r"><code>glimpse(kings_min_1)</code></pre>
+<pre><code>## Rows: 57
+## Columns: 10
+## $ navn            &lt;chr&gt; &quot;Gorm_den_gamle&quot;, &quot;Harald_1_Blåtand&quot;, &quot;Svend_1_Tveskæg…
+## $ Født            &lt;chr&gt; &quot;908-918&quot;, &quot;930&quot;, &quot;963&quot;, &quot;944&quot;, &quot;995&quot;, &quot;1020&quot;, &quot;1024&quot;,…
+## $ Kilde_født      &lt;chr&gt; &quot;https://lex.dk/Gorm_den_Gamle?gad_source=1&amp;gclid=CjwK…
+## $ Død             &lt;chr&gt; &quot;958&quot;, &quot;987&quot;, &quot;1014&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047&quot;, …
+## $ Kilde_død       &lt;chr&gt; &quot;https://natmus.dk/historisk-viden/temaer/kongeraekken…
+## $ StartReg.       &lt;dbl&gt; NA, 958, 987, 1014, 1018, 1035, 1042, 1047, 1074, 1080…
+## $ Kilde_StartReg. &lt;chr&gt; &quot;Kongerækken&quot;, &quot;Harald Blåtand, ca. 958-987&quot;, &quot;Svend T…
+## $ ...8            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ SlutReg.        &lt;chr&gt; &quot;958&quot;, &quot;987&quot;, &quot;1014&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047&quot;, …
+## $ Kilde_SlutReg.  &lt;chr&gt; &quot;Kongerækken&quot;, &quot;Kongerækken&quot;, &quot;Kongerækken&quot;, &quot;Kongeræk…</code></pre>
+<pre class="r"><code>kings_min_1$SlutReg. &lt;- as.numeric(kings_min_1$SlutReg.)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>glimpse(kings_min_1)</code></pre>
+<pre><code>## Rows: 57
+## Columns: 10
+## $ navn            &lt;chr&gt; &quot;Gorm_den_gamle&quot;, &quot;Harald_1_Blåtand&quot;, &quot;Svend_1_Tveskæg…
+## $ Født            &lt;chr&gt; &quot;908-918&quot;, &quot;930&quot;, &quot;963&quot;, &quot;944&quot;, &quot;995&quot;, &quot;1020&quot;, &quot;1024&quot;,…
+## $ Kilde_født      &lt;chr&gt; &quot;https://lex.dk/Gorm_den_Gamle?gad_source=1&amp;gclid=CjwK…
+## $ Død             &lt;chr&gt; &quot;958&quot;, &quot;987&quot;, &quot;1014&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047&quot;, …
+## $ Kilde_død       &lt;chr&gt; &quot;https://natmus.dk/historisk-viden/temaer/kongeraekken…
+## $ StartReg.       &lt;dbl&gt; NA, 958, 987, 1014, 1018, 1035, 1042, 1047, 1074, 1080…
+## $ Kilde_StartReg. &lt;chr&gt; &quot;Kongerækken&quot;, &quot;Harald Blåtand, ca. 958-987&quot;, &quot;Svend T…
+## $ ...8            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+## $ SlutReg.        &lt;dbl&gt; 958, 987, 1014, 1018, 1035, 1042, 1047, 1074, 1080, 10…
+## $ Kilde_SlutReg.  &lt;chr&gt; &quot;Kongerækken&quot;, &quot;Kongerækken&quot;, &quot;Kongerækken&quot;, &quot;Kongeræk…</code></pre>
+<pre class="r"><code>kings2 &lt;- read_csv(&quot;data/kings.csv&quot;)</code></pre>
+<pre><code>## Rows: 54 Columns: 11
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (11): Name, House, Start_year, End_year, Birth_year, Death_year, Gender,...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>glimpse(kings2)</code></pre>
+<pre><code>## Rows: 54
+## Columns: 11
+## $ Name       &lt;chr&gt; &quot;Gorm den Gamle&quot;, &quot;Harald 1. Blåtand&quot;, &quot;Toke_Gormsen&quot;, &quot;Sve…
+## $ House      &lt;chr&gt; &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Fa…
+## $ Start_year &lt;chr&gt; &quot;936&quot;, &quot;NULL&quot;, &quot;985&quot;, &quot;NULL&quot;, &quot;1014&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042…
+## $ End_year   &lt;chr&gt; &quot;958&quot;, &quot;NULL&quot;, &quot;986&quot;, &quot;NULL&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047…
+## $ Birth_year &lt;chr&gt; &quot;908&quot;, &quot;936&quot;, &quot;NULL&quot;, &quot;NULL&quot;, &quot;963&quot;, &quot;NULL&quot;, &quot;995&quot;, &quot;1018&quot;,…
+## $ Death_year &lt;chr&gt; &quot;958&quot;, &quot;985&quot;, &quot;986&quot;, &quot;1014&quot;, &quot;NULL&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047&quot;…
+## $ Gender     &lt;chr&gt; &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;,…
+## $ Dynasty    &lt;chr&gt; &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;,…
+## $ Source     &lt;chr&gt; &quot;https://da.wikipedia.org/wiki/Gorm_den_Gamle&quot;, &quot;https://da…
+## $ BirthDMY   &lt;chr&gt; &quot;908&quot;, &quot;936&quot;, NA, &quot;17/04/963&quot;, &quot;994&quot;, &quot;995&quot;, &quot;1018&quot;, &quot;1024&quot;…
+## $ DeathDMY   &lt;chr&gt; &quot;958&quot;, &quot;987&quot;, NA, &quot;03/02/1014&quot;, &quot;1018&quot;, &quot;12/11/1035&quot;, &quot;08/0…</code></pre>
+<pre class="r"><code>head(kings2)</code></pre>
+<pre><code>## # A tibble: 6 × 11
+##   Name     House Start_year End_year Birth_year Death_year Gender Dynasty Source
+##   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt; 
+## 1 Gorm de… Gorm  936        958      908        958        M      Jellin… https…
+## 2 Harald … Gorm  NULL       NULL     936        985        M      Jellin… https…
+## 3 Toke_Go… Gorm  985        986      NULL       986        M      Jellin… https…
+## 4 Svend 1… Gorm  NULL       NULL     NULL       1014       M      Jellin… https…
+## 5 Harald … Gorm  1014       1018     963        NULL       M      Jellin… https…
+## 6 Knud 1.… Gorm  1018       1035     NULL       1035       M      Jellin… https…
+## # ℹ 2 more variables: BirthDMY &lt;chr&gt;, DeathDMY &lt;chr&gt;</code></pre>
+<pre class="r"><code>kings3 &lt;- read.csv2(&quot;data/kings.csv&quot;)
+glimpse(kings3)</code></pre>
+<pre><code>## Rows: 56
+## Columns: 1
+## $ Name.House.Start_year.End_year.Birth_year.Death_year.Gender.Dynasty.Source.BirthDMY.DeathDMY &lt;chr&gt; …</code></pre>
+<pre class="r"><code>head(kings3)</code></pre>
+<pre><code>##                                          Name.House.Start_year.End_year.Birth_year.Death_year.Gender.Dynasty.Source.BirthDMY.DeathDMY
+## 1                         Gorm den Gamle,Gorm,936,958,908,958,M,Jellingdynastiet,https://da.wikipedia.org/wiki/Gorm_den_Gamle,908,958
+## 2              Harald 1. Blåtand,Gorm,NULL,NULL,936,985,M ,Jellingdynastiet,https://da.wikipedia.org/wiki/Harald_Bl%C3%A5tand,936,987
+## 3                                 Toke_Gormsen,Gorm,985,986,NULL,986,M ,Jellingdynastiet,https://da.wikipedia.org/wiki/Toke_Gormsen,,
+## 4 Svend 1. Tveskæg,Gorm,NULL,NULL,NULL,1014,M ,Jellingdynastiet,https://da.wikipedia.org/wiki/Svend_Tvesk%C3%A6g,17/04/963,03/02/1014
+## 5                              Harald 2.,Gorm,1014,1018,963,NULL,M ,Jellingdynastiet,https://da.wikipedia.org/wiki/Harald_2.,994,1018
+## 6          Knud 1. den Store,Gorm,1018,1035,NULL,1035,M ,Jellingdynastiet,https://da.wikipedia.org/wiki/Knud_den_Store,995,12/11/1035</code></pre>
+<pre class="r"><code>kings4 &lt;- read_csv2( &quot;data/kings.csv&quot;)</code></pre>
+<pre><code>## ℹ Using &quot;&#39;,&#39;&quot; as decimal and &quot;&#39;.&#39;&quot; as grouping mark. Use `read_delim()` for more control.</code></pre>
+<pre><code>## Warning: One or more parsing issues, call `problems()` on your data frame for details,
+## e.g.:
+##   dat &lt;- vroom(...)
+##   problems(dat)</code></pre>
+<pre><code>## Rows: 54 Columns: 1
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;;&quot;
+## chr (1): Name,House,Start_year,End_year,Birth_year,Death_year,Gender,Dynasty...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>glimpse(kings4)</code></pre>
+<pre><code>## Rows: 54
+## Columns: 1
+## $ `Name,House,Start_year,End_year,Birth_year,Death_year,Gender,Dynasty,Source,BirthDMY,DeathDMY` &lt;chr&gt; …</code></pre>
+<pre class="r"><code>head(kings4)</code></pre>
+<pre><code>## # A tibble: 6 × 1
+##   Name,House,Start_year,End_year,Birth_year,Death_year,Gender,Dynasty,Source,B…¹
+##   &lt;chr&gt;                                                                         
+## 1 Gorm den Gamle,Gorm,936,958,908,958,M,Jellingdynastiet,https://da.wikipedia.o…
+## 2 Harald 1. Blåtand,Gorm,NULL,NULL,936,985,M ,Jellingdynastiet,https://da.wikip…
+## 3 Toke_Gormsen,Gorm,985,986,NULL,986,M ,Jellingdynastiet,https://da.wikipedia.o…
+## 4 Svend 1. Tveskæg,Gorm,NULL,NULL,NULL,1014,M ,Jellingdynastiet,https://da.wiki…
+## 5 Harald 2.,Gorm,1014,1018,963,NULL,M ,Jellingdynastiet,https://da.wikipedia.or…
+## 6 Knud 1. den Store,Gorm,1018,1035,NULL,1035,M ,Jellingdynastiet,https://da.wik…
+## # ℹ abbreviated name:
+## #   ¹​`Name,House,Start_year,End_year,Birth_year,Death_year,Gender,Dynasty,Source,BirthDMY,DeathDMY`</code></pre>
 <p>Answer: 1. Which of these functions is a <code>tidyverse</code>
-function? Read data with it below into a <code>kings</code> object 2.
-What is the result of running <code>class()</code> on the
-<code>kings</code> object created with a tidyverse function. 3. How many
-columns does the object have when created with these different
-functions? 4. Show the dataset so that we can see how R interprets each
-column</p>
+function? Read data with it below into a <code>kings</code> object</p>
+<p>Tidyverse is kings2 and kings4 which is downloaded into R. Kings1 and
+Kings3 are the original R</p>
+<ol start="2" style="list-style-type: decimal">
+<li>What is the result of running <code>class()</code> on the
+<code>kings</code> object created with a tidyverse function.</li>
+</ol>
+<p>When running class on kings 2 and kings 4 it shows:[1] “spec_tbl_df”
+“tbl_df” “tbl” “data.frame” and [1] “spec_tbl_df” “tbl_df” “tbl”
+“data.frame” which describes a tibble.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>How many columns does the object have when created with these
+different functions? the kings2 have 11 columns the kings4 have 1
+column</p></li>
+<li><p>Show the dataset so that we can see how R interprets each
+column</p></li>
+</ol>
 <pre class="r"><code># COMPLETE THE BLANKS BELOW WITH YOUR CODE, then turn the &#39;eval&#39; flag in this chunk to TRUE.
 
-kings &lt;- _____
 
-class(kings)
-
-
-____(kings)
-
-
-____(kings)</code></pre>
+kings2 &lt;- read_csv(&quot;data/kings.csv&quot;)</code></pre>
+<pre><code>## Rows: 54 Columns: 11
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (11): Name, House, Start_year, End_year, Birth_year, Death_year, Gender,...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>class(kings2)</code></pre>
+<pre><code>## [1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>class(kings4)</code></pre>
+<pre><code>## [1] &quot;spec_tbl_df&quot; &quot;tbl_df&quot;      &quot;tbl&quot;         &quot;data.frame&quot;</code></pre>
+<pre class="r"><code>ncol(kings2)</code></pre>
+<pre><code>## [1] 11</code></pre>
+<pre class="r"><code>ncol(kings4)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>glimpse(kings2)</code></pre>
+<pre><code>## Rows: 54
+## Columns: 11
+## $ Name       &lt;chr&gt; &quot;Gorm den Gamle&quot;, &quot;Harald 1. Blåtand&quot;, &quot;Toke_Gormsen&quot;, &quot;Sve…
+## $ House      &lt;chr&gt; &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Fa…
+## $ Start_year &lt;chr&gt; &quot;936&quot;, &quot;NULL&quot;, &quot;985&quot;, &quot;NULL&quot;, &quot;1014&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042…
+## $ End_year   &lt;chr&gt; &quot;958&quot;, &quot;NULL&quot;, &quot;986&quot;, &quot;NULL&quot;, &quot;1018&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047…
+## $ Birth_year &lt;chr&gt; &quot;908&quot;, &quot;936&quot;, &quot;NULL&quot;, &quot;NULL&quot;, &quot;963&quot;, &quot;NULL&quot;, &quot;995&quot;, &quot;1018&quot;,…
+## $ Death_year &lt;chr&gt; &quot;958&quot;, &quot;985&quot;, &quot;986&quot;, &quot;1014&quot;, &quot;NULL&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047&quot;…
+## $ Gender     &lt;chr&gt; &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;,…
+## $ Dynasty    &lt;chr&gt; &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;,…
+## $ Source     &lt;chr&gt; &quot;https://da.wikipedia.org/wiki/Gorm_den_Gamle&quot;, &quot;https://da…
+## $ BirthDMY   &lt;chr&gt; &quot;908&quot;, &quot;936&quot;, NA, &quot;17/04/963&quot;, &quot;994&quot;, &quot;995&quot;, &quot;1018&quot;, &quot;1024&quot;…
+## $ DeathDMY   &lt;chr&gt; &quot;958&quot;, &quot;987&quot;, NA, &quot;03/02/1014&quot;, &quot;1018&quot;, &quot;12/11/1035&quot;, &quot;08/0…</code></pre>
+<pre class="r"><code>glimpse(kings4)</code></pre>
+<pre><code>## Rows: 54
+## Columns: 1
+## $ `Name,House,Start_year,End_year,Birth_year,Death_year,Gender,Dynasty,Source,BirthDMY,DeathDMY` &lt;chr&gt; …</code></pre>
 </div>
 <div id="calculate-the-duration-of-reign-for-all-the-kings-in-your-table" class="section level2">
 <h2>Calculate the duration of reign for all the kings in your table</h2>
@@ -425,7 +781,31 @@ strategy to deal with them: <code>na.omit()</code>,
 <p>Create a new column called <code>duration</code> in the kings
 dataset, utilizing the <code>mutate()</code> function from tidyverse.
 Check with your group to brainstorm the options.</p>
-<pre class="r"><code># YOUR CODE</code></pre>
+<pre class="r"><code># YOUR CODE
+
+kings2$End_year &lt;- as.numeric(kings2$End_year) </code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>kings2$Start_year &lt;- as.numeric(kings2$Start_year)</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre class="r"><code>kings_duration &lt;- kings2 %&gt;% 
+  mutate(duration= End_year - Start_year) %&gt;% 
+  na.omit(duration)
+
+glimpse(kings_duration)</code></pre>
+<pre><code>## Rows: 49
+## Columns: 12
+## $ Name       &lt;chr&gt; &quot;Gorm den Gamle&quot;, &quot;Harald 2.&quot;, &quot;Knud 1. den Store&quot;, &quot;Hardek…
+## $ House      &lt;chr&gt; &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Gorm&quot;, &quot;Fairhair&quot;, &quot;Estridsen&quot;, &quot;E…
+## $ Start_year &lt;dbl&gt; 936, 1014, 1018, 1035, 1042, 1074, 1080, 1086, 1095, 1104, …
+## $ End_year   &lt;dbl&gt; 958, 1018, 1035, 1042, 1047, 1080, 1086, 1095, 1103, 1134, …
+## $ Birth_year &lt;chr&gt; &quot;908&quot;, &quot;963&quot;, &quot;NULL&quot;, &quot;995&quot;, &quot;1018&quot;, &quot;1019&quot;, &quot;1041&quot;, &quot;1043&quot;…
+## $ Death_year &lt;chr&gt; &quot;958&quot;, &quot;NULL&quot;, &quot;1035&quot;, &quot;1042&quot;, &quot;1047&quot;, &quot;1080&quot;, &quot;1086&quot;, &quot;109…
+## $ Gender     &lt;chr&gt; &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;,…
+## $ Dynasty    &lt;chr&gt; &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;,…
+## $ Source     &lt;chr&gt; &quot;https://da.wikipedia.org/wiki/Gorm_den_Gamle&quot;, &quot;https://da…
+## $ BirthDMY   &lt;chr&gt; &quot;908&quot;, &quot;994&quot;, &quot;995&quot;, &quot;1018&quot;, &quot;1024&quot;, &quot;1041&quot;, &quot;1043&quot;, &quot;1050&quot;…
+## $ DeathDMY   &lt;chr&gt; &quot;958&quot;, &quot;1018&quot;, &quot;12/11/1035&quot;, &quot;08/06/1042&quot;, &quot;25/10/1047&quot;, &quot;1…
+## $ duration   &lt;dbl&gt; 22, 4, 17, 7, 5, 6, 6, 9, 8, 30, 3, 9, 25, 20, 39, 9, 2, 7,…</code></pre>
 </div>
 <div id="calculate-the-average-duration-of-reign-for-all-rulers" class="section level2">
 <h2>Calculate the average duration of reign for all rulers</h2>
@@ -436,6 +816,8 @@ a vector. So you need to subset your <code>kings</code> dataset to the
 calculate average on it with <code>mean()</code> base-R function. If you
 subset it as a tibble, you can calculate average on it with
 <code>summarize()</code> tidyverse function. Try both ways!</p>
+<p>the summarize funtion didn’t work, so we used mean with the
+base-Rfuntion, and got an average on 19,9 year</p>
 <ul>
 <li>You first need to know how to select the relevant
 <code>duration</code> column. What are your options?</li>
@@ -446,16 +828,46 @@ The <code>mean()</code> function can only be run on a vector. The
 Coerce your data to numbers with <code>as.numeric()</code>.</li>
 <li>Remember to handle NAs: <code>mean(X, na.rm=TRUE)</code></li>
 </ul>
-<pre class="r"><code># YOUR CODE</code></pre>
+<pre class="r"><code># YOUR CODE
+
+mean(kings_duration$duration, na.rm = TRUE)</code></pre>
+<pre><code>## [1] 19.97959</code></pre>
+<pre class="r"><code>#summarize(kings_duration,[&quot;duration&quot;])</code></pre>
 </div>
 <div id="how-many-and-which-kings-enjoyed-a-longer-than-average-duration-of-reign" class="section level2">
 <h2>How many and which kings enjoyed a longer-than-average duration of
 reign?</h2>
+<p>22 kings enjoyed a longer-than-average duration of reign. look at the
+glimpse to see which kings.</p>
 <p>You have calculated the average duration above. Use it now to
 <code>filter()</code> the <code>duration</code> column in
 <code>kings</code> dataset. Display the result and also count the
 resulting rows with <code>count()</code></p>
-<pre class="r"><code># YOUR CODE</code></pre>
+<pre class="r"><code># YOUR CODE
+
+duration_above_average &lt;- kings_duration %&gt;% 
+  filter(duration&gt;20)
+
+count(duration_above_average)</code></pre>
+<pre><code>## # A tibble: 1 × 1
+##       n
+##   &lt;int&gt;
+## 1    22</code></pre>
+<pre class="r"><code>glimpse(duration_above_average)</code></pre>
+<pre><code>## Rows: 22
+## Columns: 12
+## $ Name       &lt;chr&gt; &quot;Gorm den Gamle&quot;, &quot;Niels&quot;, &quot;Valdemar 1. den Store&quot;, &quot;Valdem…
+## $ House      &lt;chr&gt; &quot;Gorm&quot;, &quot;Estridsen&quot;, &quot;Estridsen&quot;, &quot;Estridsen&quot;, &quot;Estridsen&quot;,…
+## $ Start_year &lt;dbl&gt; 936, 1104, 1157, 1202, 1259, 1286, 1340, 1396, 1448, 1482, …
+## $ End_year   &lt;dbl&gt; 958, 1134, 1182, 1241, 1286, 1319, 1375, 1439, 1481, 1513, …
+## $ Birth_year &lt;chr&gt; &quot;908&quot;, &quot;1055&quot;, &quot;1131&quot;, &quot;1170&quot;, &quot;1249&quot;, &quot;1274&quot;, &quot;1320&quot;, &quot;138…
+## $ Death_year &lt;chr&gt; &quot;958&quot;, &quot;1134&quot;, &quot;1182&quot;, &quot;1241&quot;, &quot;1286&quot;, &quot;1319&quot;, &quot;1375&quot;, &quot;145…
+## $ Gender     &lt;chr&gt; &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;,…
+## $ Dynasty    &lt;chr&gt; &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;, &quot;Jellingdynastiet&quot;,…
+## $ Source     &lt;chr&gt; &quot;https://da.wikipedia.org/wiki/Gorm_den_Gamle&quot;, &quot;https://da…
+## $ BirthDMY   &lt;chr&gt; &quot;908&quot;, &quot;1134&quot;, &quot;14/01/1131&quot;, &quot;05/1170&quot;, &quot;1249&quot;, &quot;1274&quot;, &quot;13…
+## $ DeathDMY   &lt;chr&gt; &quot;958&quot;, &quot;25/06/1134&quot;, &quot;12/05/1182&quot;, &quot;28/03/1241&quot;, &quot;22/10/128…
+## $ duration   &lt;dbl&gt; 22, 30, 25, 39, 27, 33, 35, 43, 33, 31, 23, 29, 60, 22, 29,…</code></pre>
 </div>
 <div id="how-many-days-did-the-three-longest-ruling-monarchs-rule" class="section level2">
 <h2>How many days did the three longest-ruling monarchs rule?</h2>
@@ -468,7 +880,54 @@ you calculate the total number of days they ruled</li>
 <li>BONUS: consider the transition year (with 366 days) in your
 calculation!</li>
 </ul>
-<pre class="r"><code># YOUR CODE</code></pre>
+<pre class="r"><code># YOUR CODE
+
+duration_descending &lt;- kings_duration %&gt;% 
+  arrange(desc(duration))
+
+glimpse(duration_descending)</code></pre>
+<pre><code>## Rows: 49
+## Columns: 12
+## $ Name       &lt;chr&gt; &quot;Christian 4.&quot;, &quot;Margrete 2.&quot;, &quot;Erik 7. af Pommern&quot;, &quot;Chris…
+## $ House      &lt;chr&gt; &quot;Oldenburg&quot;, &quot;Schleswig-Holstein-Sonderburg-Glücksborg&quot;, &quot;P…
+## $ Start_year &lt;dbl&gt; 1588, 1972, 1396, 1863, 1766, 1202, 1340, 1912, 1286, 1448,…
+## $ End_year   &lt;dbl&gt; 1648, 2023, 1439, 1906, 1808, 1241, 1375, 1947, 1319, 1481,…
+## $ Birth_year &lt;chr&gt; &quot;1577&quot;, &quot;1940&quot;, &quot;1382&quot;, &quot;1818&quot;, &quot;1749&quot;, &quot;1170&quot;, &quot;1320&quot;, &quot;18…
+## $ Death_year &lt;chr&gt; &quot;1648&quot;, &quot;NULL&quot;, &quot;1459&quot;, &quot;1906&quot;, &quot;1808&quot;, &quot;1241&quot;, &quot;1375&quot;, &quot;19…
+## $ Gender     &lt;chr&gt; &quot;M&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;, &quot;M&quot;,…
+## $ Dynasty    &lt;chr&gt; &quot;Oldenborg&quot;, &quot;Glücksborg&quot;, &quot;Jellingdynastiet&quot;, &quot;Glücksborg&quot;…
+## $ Source     &lt;chr&gt; &quot;https://da.wikipedia.org/wiki/Christian_4.&quot;, &quot;https://da.w…
+## $ BirthDMY   &lt;chr&gt; &quot;12/04/1577&quot;, &quot;16/1/1940&quot;, &quot;1382&quot;, &quot;08/04/1818&quot;, &quot;29/01/174…
+## $ DeathDMY   &lt;chr&gt; &quot;28/02/1648&quot;, &quot;14/1/2024&quot;, &quot;24/09/1459&quot;, &quot;29/1/1906&quot;, &quot;13/0…
+## $ duration   &lt;dbl&gt; 60, 51, 43, 43, 42, 39, 35, 35, 33, 33, 31, 31, 31, 30, 29,…</code></pre>
+<pre class="r"><code>longest_ruler &lt;- duration_descending %&gt;% 
+  slice(c(1,2,3))
+
+glimpse(longest_ruler)</code></pre>
+<pre><code>## Rows: 3
+## Columns: 12
+## $ Name       &lt;chr&gt; &quot;Christian 4.&quot;, &quot;Margrete 2.&quot;, &quot;Erik 7. af Pommern&quot;
+## $ House      &lt;chr&gt; &quot;Oldenburg&quot;, &quot;Schleswig-Holstein-Sonderburg-Glücksborg&quot;, &quot;P…
+## $ Start_year &lt;dbl&gt; 1588, 1972, 1396
+## $ End_year   &lt;dbl&gt; 1648, 2023, 1439
+## $ Birth_year &lt;chr&gt; &quot;1577&quot;, &quot;1940&quot;, &quot;1382&quot;
+## $ Death_year &lt;chr&gt; &quot;1648&quot;, &quot;NULL&quot;, &quot;1459&quot;
+## $ Gender     &lt;chr&gt; &quot;M&quot;, &quot;F&quot;, &quot;M&quot;
+## $ Dynasty    &lt;chr&gt; &quot;Oldenborg&quot;, &quot;Glücksborg&quot;, &quot;Jellingdynastiet&quot;
+## $ Source     &lt;chr&gt; &quot;https://da.wikipedia.org/wiki/Christian_4.&quot;, &quot;https://da.w…
+## $ BirthDMY   &lt;chr&gt; &quot;12/04/1577&quot;, &quot;16/1/1940&quot;, &quot;1382&quot;
+## $ DeathDMY   &lt;chr&gt; &quot;28/02/1648&quot;, &quot;14/1/2024&quot;, &quot;24/09/1459&quot;
+## $ duration   &lt;dbl&gt; 60, 51, 43</code></pre>
+<pre class="r"><code>longest_ruler %&gt;% 
+  mutate(days=duration*366)</code></pre>
+<pre><code>## # A tibble: 3 × 13
+##   Name     House Start_year End_year Birth_year Death_year Gender Dynasty Source
+##   &lt;chr&gt;    &lt;chr&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt; 
+## 1 Christi… Olde…       1588     1648 1577       1648       M      Oldenb… https…
+## 2 Margret… Schl…       1972     2023 1940       NULL       F      Glücks… https…
+## 3 Erik 7.… Pome…       1396     1439 1382       1459       M      Jellin… https…
+## # ℹ 4 more variables: BirthDMY &lt;chr&gt;, DeathDMY &lt;chr&gt;, duration &lt;dbl&gt;,
+## #   days &lt;dbl&gt;</code></pre>
 </div>
 <div id="challenge-plot-the-kings-duration-of-reign-through-time" class="section level2">
 <h2>Challenge: Plot the kings’ duration of reign through time</h2>
@@ -487,7 +946,15 @@ along the x axis and <code>duration</code> along y axis</li>
 <li>BONUS: add a title, nice axis labels to the plot and make the theme
 B&amp;W and font bigger to make it nice and legible!</li>
 </ul>
-<pre class="r"><code># YOUR CODE</code></pre>
+<pre class="r"><code># YOUR CODE
+
+kings_duration_and_midyear &lt;- kings_duration %&gt;% 
+  mutate(midyear= Start_year+duration/2)
+
+kings_duration_and_midyear %&gt;% 
+  ggplot(aes(x=midyear, y=duration))+geom_point()+geom_smooth()+theme_bw()+ggtitle(&quot;Kings&#39; duration of reign through time&quot;)</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img role="img" src="data:image/png;base64,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" width="672" /></p>
 <p>And to submit this rmarkdown, knit it into html. But first, clean up
 the code chunks, adjust the date, rename the author and change the
 <code>eval=FALSE</code> flag to <code>eval=TRUE</code> so your script
