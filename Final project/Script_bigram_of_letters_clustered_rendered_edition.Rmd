@@ -1,0 +1,170 @@
+---
+title: "Letters from aristocratic women"
+author: "Laura, Amanda, Sarah, Cecilie"
+date: "2025-04-28"
+output: html_document
+---
+
+
+```{r, message=FALSE}
+
+library(tidyverse)
+library(tidytext)
+library(ggwordcloud)
+library(here)
+library(pdftools)
+library(lubridate)
+
+
+```
+```{r indsætter dokument, include=FALSE}
+
+read.csv2("data/Rosenkrantzclustered.csv")-> rosenkrantzclustered
+
+rosenkrantzclustered
+
+
+```
+
+Ved ikke hvorfor det her step er nødvendigt, men tror det er fordi jeg skal påpege hvilken kolonne det er jeg vil bruge og så få det tilbage til fulltext, da det er blevet omdannet til kollonner og jeg skal bruge den hele tekst. Hvis jeg får mærkelige resultater må jeg gå tilbage til at bruge alle PDF'erne og ikke den clustered version
+
+```{r splitter linjerne og får dem under hinanden}
+
+
+#breverosen_df <- data.frame(breverosen_p2) %>% 
+ # mutate(text_full = str_split(breverosen_p2, pattern = '\\n')) %>% 
+ # unnest(text_full) %>% 
+ # mutate(text_full = str_trim(text_full)) 
+
+#breverosen_tokens <- breverosen_df %>% 
+ # unnest_tokens(word, text_full)
+
+#breverosen_tokens %>% 
+ # unnest_tokens(bigram, breverosen_p2, token = "ngrams", n=2) -> breverosen_bigrams
+
+
+breverosen_df <- data.frame(word_character) %>% 
+  mutate(text_full = str_split(word_character, pattern = '\\n')) %>% 
+  unnest(text_full) %>% 
+  mutate(text_full = str_trim(text_full)) 
+
+breverosen_df
+
+
+
+breverosen_tokens <- breverosen_df %>% 
+  unnest_tokens(word, text_full)
+
+
+breverosen_tokens
+
+
+```
+
+```{r inddeler i bigram}
+breverosen_df %>% 
+  unnest_tokens(bigram, text_full, token = "ngrams", n=2) -> breverosen_bigrams
+
+
+breverosen_bigrams
+```
+
+
+```{r tæller bigrams}
+
+breverosen_bigrams %>% 
+  select(bigram)
+
+
+breverosen_bigrams%>% 
+  count(bigram, sort = TRUE)
+
+
+```
+
+Før vi kan fjerne ordpar hvor et af ordene er stopord, er vi dog nødt til at have splittet kolonnen "bigram" op i to: "word1", "word2":
+
+
+```{r }
+
+
+breverosen_bigrams %>% 
+  separate(bigram, c("word1", "word2"), sep = " ") ->breverosen_bigrams_separated
+
+
+
+```
+
+
+Derefter kan vi filtrere stopordene ud i begge kolonner, hvilket vi gemmer til en ny dataframe:
+```{r}
+
+
+stopord<- readLines("stoplist.txt")
+
+breverosen_bigrams_separated %>% 
+  filter(!word1 %in% stopord) %>%
+  filter(!word2 %in% stopord) -> breverosen_bigrams_filtered
+
+
+breverosen_bigrams_filtered
+
+```
+
+
+```{r}
+breverosen_bigrams_filtered %>% 
+  count(word1, word2, sort = TRUE)
+```
+
+Eftersom vi har bigram i to kolonner kan vi nu også styre præcis hvilket ord vi kigger på som ord nummer 2. Lad os prøve med "strikke-ord". Tricket her er funktionen `str_detect`, som får at vide at den leder ord der starter med "strik" og kan efterfølges af 0 eller flere bogstaver mellem a til z og æ og ø. "\\b" angiver at det efterfølgende s skal være starten af ordet. Denne måde at angive tekstmønstre på kaldes regulære udtryk og er en kraftfuld og avanceret måde at søge efter mønstre i tekst.
+
+
+```{r}
+
+breverosen_bigrams_filtered %>% 
+  filter(str_detect(word1, "\\bbef+al+[a-zæø]*")) %>% 
+  count(word1, word2, sort = TRUE)
+
+
+
+
+
+```
+Vi ser stadig at "di strikt" spøger en smule, men der dukker pludselig en masse interessante bigrams op. En måde at visualisere det bedre på end en liste er gennem en netværks-graf. På listen oven for ses at flere af de hyppigt forekommende ordpar har "strikkegarn" som word2. I en netværksgraf vil strikkegarn altså blive et punkt, mens "uldent", "bomulds", "coul, og "couleurt" vil være punkter der peger ind mod "strikkegarn". På denne måde kan man på en ret overskuelig måde illustrere flere ords interne forhold.
+
+Allerførst gemmer vi den ovenstående optælling til en ny data frame, så vi kan arbejde videre med den:
+
+```{r}
+breverosen_bigrams_filtered %>% 
+  filter(str_detect(word1, "\\bbef+al+[a-zæø]*|\\bchr[i?e?]stof+er[a-zæø]*|\\bgu[a-zæø]*")) %>% 
+  count(word1, word2, sort = TRUE) -> breverosen_test_bigrams_counts
+
+
+breverosen_test_bigrams_counts
+
+```
+
+Herefter bruger vi biblioteket "igraph" til at lave vores dataframe om til et netværksgraf-element. Inden da specificerer vi, at vi kun er interesserede i bigrams, der optræder mere en 8 gange:
+
+```{r, message=FALSE}
+library(igraph)
+bigram_graph <- breverosen_test_bigrams_counts %>%
+  graph_from_data_frame()
+```
+
+Tilsidst bruger vi pakken "ggraph" til at visualisere netværket:
+
+```{r}
+library(ggraph)
+a <- grid::arrow(type = "closed", length = unit(.15, "inches"))
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                 arrow = a, end_cap = circle(.07, 'inches')) +
+  geom_node_point(color = "darkgoldenrod4", size = 5) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()
+```
+
+Herved for vi altså på en overskuelig måde visualiseret de forskellige ords forhold. 
+
