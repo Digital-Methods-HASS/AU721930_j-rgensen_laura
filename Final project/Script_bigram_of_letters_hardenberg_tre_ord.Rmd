@@ -1,0 +1,242 @@
+---
+title: "Letters from aristocratic women"
+author: "Laura, Amanda, Sarah, Cecilie"
+date: "2025-04-28"
+output: html_document
+---
+
+
+```{r, message=FALSE}
+
+library(tidyverse)
+library(tidytext)
+library(ggwordcloud)
+library(here)
+library(pdftools)
+library(lubridate)
+
+
+```
+```{r}
+
+#Indsat ved vejledning fra chatgpt til at kunne forbinde de indsatte filer til at kunne anvende funktionen "analyze()"
+library(pdftools)
+
+analyze <- function(file_path) {
+  text <- pdf_text(file_path)
+  if (length(text) >= 2) {
+    cat(text[2])
+  } else {
+    cat("PDF has fewer than 2 pages.\n") #ønsker kun 2. side i hver dokument
+  }
+}
+```
+
+
+
+```{r}
+#Følger guiden fra software carpentry 
+list.files(path = "data/breve_oxe", pattern = "pdf")
+```
+```{r}
+#Følger guiden fra software carpentry 
+list.files(path = "data/breve_oxe", pattern = "breve_Oxe, Pernille-", full.names = TRUE)
+```
+```{r}
+#Følger guiden fra software carpentry 
+filenames <- list.files(path = "data/breve_oxe",  
+                        pattern = "breve_Oxe, Pernille-[0-8]{2}.pdf",
+                        full.names = TRUE)
+for (f in filenames) {
+  print(f)
+  analyze(f)
+}
+
+
+view(filenames)
+```
+her bliver hvert ord til en charachter i en tibble
+
+```{r}
+#Kombinere det med tidytext
+analyze <- function(file_path) {
+  text <- pdf_text(file_path)
+  
+  if (length(text) < 2) {
+    return(tibble(file = basename(file_path), word = NA))
+  }
+
+  second_page <- text[2]
+  #ønsker kun 2. side på hver dokument
+  
+    
+  tibble(file = basename(file_path), text = second_page)
+}
+  
+
+```
+  
+```{r}
+
+filenames <- list.files(
+  path = "data/breve_oxe",  
+  pattern = "breve_Oxe, Pernille-[0-9]{2}.pdf",
+  full.names = TRUE
+)
+
+# Use lapply to process all files and bind results
+all_texts <- lapply(filenames, analyze) %>%
+  bind_rows()
+
+all_texts
+#indeholder kun for de tre første pdf - måske får mange ord? brug for troubleshooting
+```
+
+
+
+```{r}
+#Tjek op på at alle 9 filer er tilstede 
+print(length(filenames)) 
+print(basename(filenames))
+```
+kode til at fjerne stopord
+
+#Fjerner stopord 
+my_stops <- readLines("stoplist.txt")
+my_stops_df <- tibble(word = my_stops)
+
+all_words_clean <- all_words %>%
+  filter(!is.na(word)) %>%
+  anti_join(my_stops_df, by = "word")
+
+all_words_clean_no_numeric <- all_words_clean %>% 
+  filter(is.na(as.numeric(word)))
+
+
+
+Ved ikke hvorfor det her step er nødvendigt, men tror det er fordi jeg skal påpege hvilken kolonne det er jeg vil bruge og så få det tilbage til fulltext, da det er blevet omdannet til kollonner og jeg skal bruge den hele tekst. Hvis jeg får mærkelige resultater må jeg gå tilbage til at bruge alle PDF'erne og ikke den clustered version
+
+
+brevebølle_df <- all_words_clean_no_numeric %>%
+  select(word) %>%
+  mutate(text_full = str_split(word, pattern = '\\n')) %>%
+  unnest(text_full) %>%
+  mutate(text_full = str_trim(text_full))
+
+brevebølle_tokens <- brevebølle_df %>%
+  unnest_tokens(word, text_full)
+
+brevebølle_tokens
+
+
+```{r inddeler i bigram}
+all_texts %>% 
+  unnest_tokens(bigram, text , token = "ngrams", n=3) -> breve_bigrams
+
+
+breve_bigrams
+
+```
+
+
+```{r tæller bigrams}
+
+breve_bigrams %>% 
+  select(bigram)
+
+
+breve_bigrams%>% 
+  count(bigram, sort = TRUE)
+
+
+```
+
+Før vi kan fjerne ordpar hvor et af ordene er stopord, er vi dog nødt til at have splittet kolonnen "bigram" op i tre: "word1", "word2", "word3":
+
+
+```{r }
+
+
+breve_bigrams %>% 
+  separate(bigram, c("word1", "word2", "word3"), sep = " ") ->breve_bigrams_separated
+
+
+
+```
+
+
+Derefter kan vi filtrere stopordene ud i begge kolonner, hvilket vi gemmer til en ny dataframe:
+```{r}
+
+
+stopord<- readLines("stoplist.txt")
+
+breve_bigrams_separated %>% 
+  filter(!word1 %in% stopord) %>%
+  filter(!word2 %in% stopord) %>% 
+  filter(!word3 %in% stopord)-> breve_bigrams_filtered
+
+
+breve_bigrams_filtered
+
+```
+
+
+```{r}
+breve_bigrams_filtered %>% 
+  count(word1, word2, word3, sort = TRUE)
+```
+
+Eftersom vi har bigram i to kolonner kan vi nu også styre præcis hvilket ord vi kigger på som ord nummer 2. Lad os prøve med "strikke-ord". Tricket her er funktionen `str_detect`, som får at vide at den leder ord der starter med "strik" og kan efterfølges af 0 eller flere bogstaver mellem a til z og æ og ø. "\\b" angiver at det efterfølgende s skal være starten af ordet. Denne måde at angive tekstmønstre på kaldes regulære udtryk og er en kraftfuld og avanceret måde at søge efter mønstre i tekst.
+
+
+```{r}
+
+breve_bigrams_filtered %>% 
+  filter(str_detect(word2, "\\bbef+al+[a-zæø]*")) %>% 
+  count(word1, word2, word3, sort = TRUE)
+
+
+
+
+
+```
+Vi ser stadig at "di strikt" spøger en smule, men der dukker pludselig en masse interessante bigrams op. En måde at visualisere det bedre på end en liste er gennem en netværks-graf. På listen oven for ses at flere af de hyppigt forekommende ordpar har "strikkegarn" som word2. I en netværksgraf vil strikkegarn altså blive et punkt, mens "uldent", "bomulds", "coul, og "couleurt" vil være punkter der peger ind mod "strikkegarn". På denne måde kan man på en ret overskuelig måde illustrere flere ords interne forhold.
+
+Allerførst gemmer vi den ovenstående optælling til en ny data frame, så vi kan arbejde videre med den:
+
+```{r}
+breve_bigrams_filtered %>% 
+  filter(str_detect(word1, "\\bbef+al+[a-zæø]*|\\bbest[a-zæø]*|\\bgud[a-zæø]*")) %>% 
+  count(word1, word2, word3, sort = TRUE) -> breve_test_bigrams_counts
+
+
+breve_test_bigrams_counts
+
+#bbef+al+[a-zæø]*\\bbest[ie][a-zæø]*|\\boxe[a-zæø]*|\\bgu[a-zæø]*
+
+```
+
+Herefter bruger vi biblioteket "igraph" til at lave vores dataframe om til et netværksgraf-element. Inden da specificerer vi, at vi kun er interesserede i bigrams, der optræder mere en 8 gange:
+
+```{r, message=FALSE}
+library(igraph)
+bigram_graph <- breve_test_bigrams_counts %>%
+  graph_from_data_frame()
+```
+
+Tilsidst bruger vi pakken "ggraph" til at visualisere netværket:
+
+```{r}
+library(ggraph)
+a <- grid::arrow(type = "closed", length = unit(.15, "inches"))
+ggraph(bigram_graph, layout = "fr") +
+  geom_edge_link(aes(edge_alpha = n), show.legend = FALSE,
+                 arrow = a, end_cap = circle(.07, 'inches')) +
+  geom_node_point(color = "darkgoldenrod4", size = 5) +
+  geom_node_text(aes(label = name), vjust = 1, hjust = 1) +
+  theme_void()
+```
+
+Herved for vi altså på en overskuelig måde visualiseret de forskellige ords forhold. 
+
