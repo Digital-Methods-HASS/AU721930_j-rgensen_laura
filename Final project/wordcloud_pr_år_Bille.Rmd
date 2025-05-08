@@ -37,16 +37,16 @@ analyze <- function(file_path) {
 
 ```{r}
 #Følger guiden fra software carpentry 
-list.files(path = "data", pattern = "pdf")
+list.files(path = "data/breve_bille", pattern = "pdf")
 ```
 ```{r}
 #Følger guiden fra software carpentry 
-list.files(path = "data", pattern = "brev_Rosenkrantz", full.names = TRUE)
+list.files(path = "data/breve_bille", pattern = "breve_Bille,Beate", full.names = TRUE)
 ```
 ```{r}
 #Følger guiden fra software carpentry 
-filenames <- list.files(path = "data",  
-                        pattern = "brev_Rosenkrantz-[0-9]{2}.pdf",
+filenames <- list.files(path = "data/breve_bille",  
+                        pattern = "breve_Bille,Beate-[0-9]{2}.pdf",
                         full.names = TRUE)
 for (f in filenames) {
   print(f)
@@ -74,8 +74,8 @@ analyze <- function(file_path) {
 
 
 ```{r}
-filenames <- list.files(path = "data",  
-                        pattern = "brev_Rosenkrantz-[0-9]{2}.pdf",
+filenames <- list.files(path = "data/breve_bille",  
+                        pattern = "breve_Bille,Beate-[0-9]{2}.pdf",
                         full.names = TRUE)
 
 # Use lapply to process all files and bind results
@@ -225,7 +225,7 @@ all_words_tf_idf %>%
   facet_wrap(~file, ncol = 4, scales = "free") +
   scale_color_gradient(low = "darkgoldenrod2", high = "darkgoldenrod4") +
   labs(
-    title = "Rosenkrantz letters: most important words per year",
+    title = "Beate Bille letters: most important words per year",
     subtitle = "Importance determined by term frequency (tf) - inversed document frequency (idf)",
     caption = "Data from Det Kongelige Bibliotek"
   )
